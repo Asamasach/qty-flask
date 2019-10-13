@@ -7,6 +7,7 @@ from datetime import datetime
 import redis
 import mysql.connector
 from mysql.connector import Error
+from mysql.connector import errorcode
 
 r=redis.Redis()
 class Redis(object):
@@ -17,33 +18,11 @@ a=0
 @app.route('/')
 
 def qty(qty=None):
+
     routine()
-    return render_template('index.html', qty = a)
-    try:
-        connection = mysql.connector.connect(host='localhost',
-                                         database='mehdi',
-                                         user='mehdi',
-                                         password='1')
+    
 
-        mySql_insert_query = """INSERT INTO mehdi (timestamp, CID , qty)
-                               VALUES (%s, %s, %s) """
-
-        records_to_insert = [(str(datetime.now()), '1', a )]
-
-        cursor = connection.cursor()
-        cursor.executemany(mySql_insert_query, records_to_insert)
-        connection.commit()
-        print(cursor.rowcount, "Record inserted successfully into mehdi table")
-
-    except mysql.connector.Error as error:
-        print("Failed to insert record into MySQL table {}".format(error))
-
-    finally:
-        if (connection.is_connected()):
-            cursor.close()
-            connection.close()
-            print("MySQL connection is closed")
-
+    return render_template('index.html', qty=a)
 
 
 @app.route('/json')
@@ -68,6 +47,31 @@ def routine():
     a+=1
     r.mset(db_api())
     print(r.get("qty"))
+    connection = mysql.connector.connect(host='192.168.122.100', database='mehdi', user='root', password='')
+    if connection.is_connected():
+        my_sql_insert_query = """INSERT INTO mehdi (quantity, time, CID) VALUES (%s, %s, %s)"""
+        records_to_insert = [(a, str(datetime.now()), '1')]
+        cursor = connection.cursor()
+        cursor.executemany(my_sql_insert_query, records_to_insert)
+        connection.commit()
+        print(cursor.rowcount, "Record inserted successfully into mehdi table")
     return a
 
-
+# def connect():
+#     # connection = None
+#     try:
+#         connection = mysql.connector.connect(host='192.168.122.100', database='mehdi', user='mehdi', password='1')
+#         if connection.is_connected():
+#             my_sql_insert_query = """INSERT INTO mehdi (quantity, time, CID) VALUES (%s, %s, %s)"""
+#             records_to_insert = [(a, str(datetime.now()), '1')]
+#             cursor = connection.cursor()
+#             cursor.executemany(my_sql_insert_query, records_to_insert)
+#             connection.commit()
+#             print(cursor.rowcount, "Record inserted successfully into mehdi table")
+#     except mysql.connector.Error as error:
+#         print("Failed to insert record into MySQL table {}".format(error))
+#     finally:
+#         if (connection.is_connected()):
+#             cursor.close()
+#             connection.close()
+#             print("MySQL connection is closed")
