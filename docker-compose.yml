@@ -5,26 +5,38 @@ services:
         ports:
             - "5000:5000"
         volumes:
-            - .:/code
+            - flask:/code
         depends_on:
             - redis
+            - mysql
+        networks: 
+            - flask
+
     redis:
         image: redis
-    db:
+        networks:
+            - flask
+
+
+    mysql:
         image: mysql:5.7
         restart: always
         environment:
-          MYSQL_DATABASE: 'mehdi'
-          MYSQL_USER: 'root'
-          MYSQL_PASSWORD: ''
-          MYSQL_ROOT_PASSWORD: ''
-        ports:
-            - "3306:3306"
-        expose:
-            - '3306'
+          MYSQL_DATABASE: 'webview'
+          MYSQL_USER: 'app'
+          MYSQL_PASSWORD: '123456'
+          MYSQL_ROOT_PASSWORD: 'DADcsanjabhsdfa'
         volumes:
-            - my-db:/var/lib/mysql
+            - mysql:/var/lib/mysql
+        networks:
+            - flask
+            
 
 volumes:
-  my-db:
-  .:
+  flask:
+    driver: local
+  mysql:
+    driver: local
+
+networks:
+    flask:

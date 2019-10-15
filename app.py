@@ -11,7 +11,7 @@ from mysql.connector import errorcode
 
 r=redis.Redis()
 class Redis(object):
-    def __init__(self, host='localhost', port=6379, db=0, password=None, socket_timeout=None):
+    def __init__(self, host='redis', port=6379, db=0, password=None, socket_timeout=None):
         return
 app = Flask(__name__)
 a=0
@@ -48,23 +48,23 @@ def routine():
     a+=1
     r.mset(db_api())
     print(r.get("qty"))
-    connection = mysql.connector.connect(host='192.168.122.100', database='mehdi', user='root', password='')
+    connection = mysql.connector.connect(host='mysql', database='webview', user='app', password='123456')
     if connection.is_connected():
-        my_sql_insert_query = """INSERT INTO mehdi (date_stamp, quantity, time, CID) VALUES (%s, %s, %s, %s)"""
+        my_sql_insert_query = """INSERT INTO webview (date_stamp, quantity, time, CID) VALUES (%s, %s, %s, %s)"""
         records_to_insert = [(str(datetime.now()), a, str(datetime.now()), '1')]
         cursor = connection.cursor()
         cursor.executemany(my_sql_insert_query, records_to_insert)
         connection.commit()
-        print(cursor.rowcount, "Record inserted successfully into mehdi table")
+        print(cursor.rowcount, "Record inserted successfully into webview table")
     return a
 @app.route('/result')
 def result_day(qty_day=None):
-    connection = mysql.connector.connect(host='192.168.122.100', database='mehdi', user='root', password='')
+    connection = mysql.connector.connect(host='mysql', database='webview', user='app', password='123456')
     if connection.is_connected():
         cursor=connection.cursor()
-        # my_sql_select_query = """ SELECT * FROM mehdi WHERE date_stamp >= %s AND date_stamp <= %s """
-        # my_sql_select_query = """ SELECT * FROM mehdi"""
-        my_sql_select_query = """ SELECT * FROM mehdi WHERE date_stamp LIKE %s """
+        # my_sql_select_query = """ SELECT * FROM webview WHERE date_stamp >= %s AND date_stamp <= %s """
+        # my_sql_select_query = """ SELECT * FROM webview"""
+        my_sql_select_query = """ SELECT * FROM webview WHERE date_stamp LIKE %s """
         t1=str(datetime.now())[0:10]
 
         records_to_get = [(t1+'%')]

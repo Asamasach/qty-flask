@@ -19,13 +19,11 @@ COPY . /app
 COPY ./templates /app/templates/
 WORKDIR /app
 
-
 RUN pip install --upgrade pip && \
     pip install pipenv && \
     pip install -r requirements.txt
 #    pipenv install --dev --system --deploy --ignore-pipfile
 
-ADD . /app
 ENTRYPOINT ["python"]
 EXPOSE 5000
-CMD flask run --host=0.0.0.0
+CMD [ "flask run --host=0.0.0.0" ]
