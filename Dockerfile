@@ -16,16 +16,16 @@ RUN mkdir /app/templates
 
 #COPY Pip* /app/
 COPY . /app
-COPY ./templates /app/templates/
+COPY ./templates/ /app/templates/
 WORKDIR /app
 
 
-RUN pip install --upgrade pip && \
-    pip install pipenv && \
-    pip install -r requirements.txt
+RUN pip3 install --upgrade pip && \
+    pip3 install pipenv && \
+    pip3 install -r requirements.txt
 #    pipenv install --dev --system --deploy --ignore-pipfile
 
-ADD . /app
+
 ENTRYPOINT ["python"]
 EXPOSE 5000
 CMD flask run --host=0.0.0.0
