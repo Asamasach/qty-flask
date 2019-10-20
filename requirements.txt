@@ -1,4 +1,0 @@
-flask
-redis
-datetime
-mysql.connector

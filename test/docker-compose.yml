@@ -1,0 +1,32 @@
+version: '3.1'
+services:
+    web:
+        build: .
+        container_name: Web
+        ports:
+            - "5000:5000"
+        depends_on: 
+            - redis       
+        volumes:
+            - .:/code
+        environment:
+            FLASK_ENV: development
+
+    redis:
+        container_name: Redis
+        image: "redis:alpine"
+    my_sql:
+        container_name: MySQL
+        image: "mysql:8"
+        command: --default-authentication-plugin=mysql_native_password
+        restart: always
+        ports:
+          - "3306:3306"
+        environment:
+#          - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+#          - MYSQL_USER=webview
+#          - MYSQL_PASSWORD=''
+#          - MYSQL_DATABASE=webview
+          - MYSQL_ROOT_PASSWORD="example"
+        volumes:
+          - ./my_sql:/docker-entrypoint-initdb.d/:ro #init.sql
