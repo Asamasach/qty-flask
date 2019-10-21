@@ -1,6 +1,5 @@
-CREATE DATABASE webview;
+CREATE DATABASE IF NOT EXISTS webview;
 use webview;
-
 CREATE TABLE webview (
   date_stamp VARCHAR(26),
   quantity VARCHAR(10),
