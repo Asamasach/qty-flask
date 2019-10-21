@@ -1,12 +1,40 @@
 <html>
-		<h1>
-			this is a test for DE-104
+		
+	<h1 style="text-align:center; font-size:500%; font-family:verdana; color:red;">
+
+	<img src="https://icon-library.net/images/refresh-icon-transparent/refresh-icon-transparent-0.jpg" alt="..." style="width:45px;height:50px;">
 		</h1>
-		<h2>
-			@asamasach
+
+	<h1 style="text-align:center; font-size:400%; font-family:verdana; color:green;">
+			Useless Box! :)
+		</h1>
+
+	<h1 style="text-align:center; font-size:200%; font-family:verdana; color:blue; background-color:white; opacity: 0.8;">
+			How many times has this webpage been refreshed?
+		</h1>
+
+	        {% if qty %}
+		<h1 style="text-align:center; font-size:1000%; font-family:verdana; background-color:red; opacity: 0.6; color: white; border: 1px solid Tomato;"> {{qty}} times!</h1>
+                {% endif %}
+
+
+		<h2 style="text-align:center">
+		<a href="http://gitlab.aminsft.com/asamasach/qty-flask.git" style="font-size:100%">Gitlab Repo.</a>
 		</h2>
-		{% if qty %}
-		<h1>qty : {{qty}}</h1>
-		{% endif %}
+
+                <h1 style="text-align: center;">
+                        <button style=" color: black; text-align: center; font-size: 30px" onclick="window.location.href='/result'">Statistics Page</button>
+                </h1>
+
+<style>
+
+body {
+  background-image: url('https://images-na.ssl-images-amazon.com/images/I/71bA5Q20hRL._SL1500_.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-opacity: 0.1;
+}
+</style>
 
 </html>

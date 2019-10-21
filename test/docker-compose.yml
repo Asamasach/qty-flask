@@ -28,6 +28,6 @@ services:
           - MYSQL_USER=webview
           - MYSQL_PASSWORD=''
           - MYSQL_DATABASE=webview
-          - MYSQL_ROOT_PASSWORD=""
+#          - MYSQL_ROOT_PASSWORD=""
         volumes:
           - ./init.sql:/code/init.sql

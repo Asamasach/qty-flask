@@ -1,15 +1,50 @@
+<!DOCTYPE HTML>
 <html>
-		<h1>
-			this is a test for DE-104
-		</h1>
-		<h2>
-			@asamasach
-		</h2>
-		{% if qty_day %}
-		<h1>qty in today : {{qty_day}}</h1>
+<head> 
+	<h1>
+<script>
+window.onload = function () {
 
-		<h1>qty in the current month : {{qty_month}}</h1>
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "Useless Box! visitors webview chart"
+	},
+	axisY: {
+		title: "webviews"
+	},
+	data: [{        
+		type: "column",  
+		showInLegend: true, 
+		legendMarkerColor: "grey",
+		dataPoints: [      
+			{ y: {{qty_day}}, label: "today webviews = {{qty_day}}" },
+			{ y: {{qty_month}},  label: "current month webviews = {{qty_month}}" },
+			{ y: {{qty_year}},  label: "current year webviews = {{qty_year}}" }
+		]
+	}]
+});
+chart.render();
 
-		<h1>qty in the current year : {{qty_year}}</h1>
-		{% endif %}
+}
+</script>
+	</h1>
+       
+                <h1 style="text-align: center;">
+                        <button style=" color: black; text-align: center; font-size: 30px" onclick="window.location.href='/'">Home Page</button>
+                </h1>
+
+                <h2 style="text-align:center">
+                <a href="http://gitlab.aminsft.com/asamasach/qty-flask.git" style="font-size:100%">Gitlab Repo.</a>
+                </h2>
+
+
+</head>
+<body>
+
+<div id="chartContainer" style="height: 50%; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+
 </html>
