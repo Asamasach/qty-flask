@@ -36,6 +36,11 @@ def db_api():
             "qty" : str(a)
             }
 
+@app.route('/<uuid>', methods=['GET', 'POST'])
+def add_message(uuid):
+    content = request.json
+  #  print(content['mytext'])
+    return jsonify({"uuid":uuid})
 
 def routine():
     global a
