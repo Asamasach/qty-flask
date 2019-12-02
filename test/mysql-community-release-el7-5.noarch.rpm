@@ -1,0 +1,98 @@
+
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <title>Your request for access has been denied in accordance with U.S. export regulations</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" type="text/css" href="http://download.oracle.com/errors/us/assets/hp-styles.css">
+    <link rel="stylesheet" type="text/css" href="http://download.oracle.com/errors/us/assets/master-master.css">
+  </head>
+  <body style="margin: 0px" bgcolor="#ffffff">
+    <div id="banner">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td rowspan="2" valign="middle" nowrap="nowrap"><a href="http://www.oracle.com"><img src="http://download.oracle.com/errors/us/assets/oralogo-small.gif" width="154" height="19" hspace="10" vspace="25" border="0" alt=""></a></td>
+          <td align="right" valign="top" width="70%" nowrap="nowrap" class="padMid"><div id="bannerMid"> </div></td>
+          <td width="30%" align="left" valign="bottom" nowrap="nowrap"></td>
+        </tr>
+        <tr>
+          <td align="right" valign="bottom" nowrap="nowrap" class="padMid"></td>
+          <td width="30%" align="left" valign="bottom" nowrap="nowrap"></td>
+        </tr>
+      </table>
+    </div>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td width="10"><img src="http://download.oracle.com/errors/us/assets/spacer.gif" border="0" alt="" width="10"></td>
+        <td>
+          <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td><img src="http://download.oracle.com/errors/us/assets/spacer.gif" border="0" alt="" height="15"></td>
+            </tr>
+            <tr>
+              <td>
+                <h3>Thank you for your interest in MySQL.</h3>
+                <br>
+                <br>
+                <p>In compliance with U.S. and applicable Export laws we are unable to process your request.&nbsp;&nbsp;Please contact <a href="mailto:RPLS-Ops_ww@oracle.com?subject=Oracle OTN Export Denial"><u>RPLS-Ops_ww@oracle.com</u></a> if you believe you are receiving this notice in error.</p>
+                <br>
+                <br>
+              </td>
+            </tr>
+            <tr>
+              <td><img src="http://download.oracle.com/errors/us/assets/spacer.gif" border="0" alt="" height="5"></td>
+            </tr>
+          </table>
+          <table width="100%" border="0" align="center" cellpadding="2" cellspacing="2">
+            <tr valign="middle">
+              <td align="right" valign="top" width="2%"><img src="http://download.oracle.com/errors/us/assets/004894.gif" width="7" height="7" vspace="3" alt=""></td>
+              <td><a href="https://www.mysql.com/">MySQL Web Site</a></td>
+            </tr>
+            <tr valign="middle">
+              <td align="right" valign="top"><img src="http://download.oracle.com/errors/us/assets/004894.gif" width="7" height="7" vspace="3" alt=""></td>
+              <td><a href="https://dev.mysql.com/">MySQL Developer Zone</a></td>
+            </tr>
+            <tr valign="middle">
+              <td align="right" valign="top"><img src="http://download.oracle.com/errors/us/assets/004894.gif" width="7" height="7" vspace="3" alt=""></td>
+              <td><a href="https://www.mysql.com/products/">MySQL Products</a></td>
+            </tr>
+            <tr valign="middle">
+              <td align="right" valign="top"><img src="http://download.oracle.com/errors/us/assets/004894.gif" width="7" height="7" vspace="3" alt=""></td>
+              <td><a href="https://www.mysql.com/downloads/">MySQL Downloads</a></td>
+            </tr>
+          </table>
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr valign="top">
+              <td width="99%">&nbsp;</td>
+            </tr>
+          </table>
+          <br>
+          <div id="footer">
+            <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="50%" class="legalese" align="right" valign="top">&nbsp;</td>
+                <td width="50%" class="legalese" align="left" valign="top">&nbsp;</td>
+              </tr>
+              <tr>
+                <td width="50%" class="legalese" align="left" valign="top">&nbsp;</td>
+                <td width="50%" class="legalese" align="right" valign="top">
+                  <a class="legalese" href="http://www.oracle.com/html/copyright.html" target="_top">Legal Notices and Terms for Use</a>
+                  <span class="navlink">|</span>
+                  <a class="legalese" href="http://www.oracle.com/html/privacy.html" target="_top">Privacy Statement</a>
+                  <br>
+                </td>
+              </tr>
+              <tr>
+                <td width="50%" class="legalese" align="right" valign="top">&nbsp;</td>
+                <td width="50%" class="legalese" align="left" valign="top"></td>
+              </tr>
+            </table>
+          </div>
+        </td>
+        <td width="10"><img src="http://download.oracle.com/errors/us/assets/spacer.gif" border="0" alt="" width="10"></td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -2,7 +2,7 @@
 #======================================================================================
 #---------Import modules like datetime/flask(web-microservice)/redis(in mem db)--------
 
-from flask import Flask
+from flask import Flask, jsonify, request
 from flask import render_template
 from datetime import datetime
 import redis
@@ -25,7 +25,7 @@ r=redis.Redis(host='redis', port=6379 , db=0, password=None, socket_timeout=None
 # r=redis.Redis( host='redis', port=6379 )
 
 
-
+@app.route('/json')
 def db_api():
     return {
             str(datetime.now()): str({
@@ -64,6 +64,54 @@ def qty(qty=None):
 def timeShow():
     time = datetime.now()
     return str(time)
+
+@app.route('/my_form', methods=['POST'])
+def my_form():
+    form_input = request.form['comment_content']
+    # Now that get value back to server can send it to a DB(use Flask-SQLAlchemy)
+    return(form_input)
+
+@app.route('/show_form')
+def index_form():
+    return render_template('index_form.html')
+
+@app.route('/manage_game', methods=['POST'])
+def manage_game():
+    start = request.form['action'] == 'Start'
+    game_id = request.form['game_id']
+
+    if start:
+        start_game(game_id)
+    else:
+        stop_game(game_id)
+
+    return redirect(url_for('index'))
+
+@app.route('/save', methods=['POST'])
+def save():
+    if request.method == 'POST':
+        clean_and_validate_the_data() # some functional code you need to handle POST data
+        save_the_data() # some functional code to save our data 
+    return redirect(url_for("index"))
+
+@app.route('/test')
+def hello():
+    name = request.args['name']
+    return """
+        <html><body>
+            <h1>Hello, {0}!</h1>
+            The time is {1}.
+        </body></html>
+        """.format(
+            name, str(datetime.now()))
+
+@app.route('/new_form', methods=['GET', 'POST'])
+def new_album():
+    """
+    Add a new form
+    """
+    form = AlbumForm(request.form)
+    return render_template('index_form.html', form=form)
 
 @app.route('/redis')
 def redisShow():
